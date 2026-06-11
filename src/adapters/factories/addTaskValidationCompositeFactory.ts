@@ -1,10 +1,17 @@
+import { DateValidatorAdapter } from '../dateValidadeAdapter'
 import type { Validation } from '../interfaces/validation'
+import { DateValidation } from '../validations/dateValidation'
+import { RequiredFieldsValidation } from '../validations/requiredFieldsValidation'
 import { ValidationComposite } from '../validations/validationComposite'
 
 export const AddTaskValidationCompositeFactory = (): ValidationComposite => {
   const validations: Validation[] = []
 
-  // TODO: validation required fields
-  // TODO: validation date validation
+  for (const field of ['title', 'description', 'date']) {
+    validations.push(new RequiredFieldsValidation(field))
+  }
+
+  validations.push(new DateValidation('date', new DateValidatorAdapter()))
+
   return new ValidationComposite(validations)
 }
