@@ -1,14 +1,14 @@
 import { DbAddTask } from '../../dataSources/db/dbAddTask'
+import { AddTaskMongoRepository } from '../../dataSources/db/repository/addTaskMongoRepository'
 import { LogErrorMongoRepository } from '../../dataSources/db/repository/logErrorMongoRepository'
-import { TaskMongoRepository } from '../../dataSources/db/repository/taskMongoRepository'
 import { AddTaskController } from '../controllers/task/addTask'
 import { LogErrorControllerDecorator } from '../decorator/logErrorControllerDecorator'
 import { addTaskValidationCompositeFactory } from './addTaskValidationCompositeFactory'
 
-export const taskControllerFactory = () => {
-  const taskMongoRepository = new TaskMongoRepository()
-  const dbAddTask = new DbAddTask(taskMongoRepository)
-  const taskController = new AddTaskController(dbAddTask, addTaskValidationCompositeFactory())
+export const addTaskControllerFactory = () => {
+  const addTaskMongoRepository = new AddTaskMongoRepository()
+  const dbAddTask = new DbAddTask(addTaskMongoRepository)
+  const addTaskController = new AddTaskController(dbAddTask, addTaskValidationCompositeFactory())
   const logErrorMongoRepository = new LogErrorMongoRepository()
-  return new LogErrorControllerDecorator(taskController, logErrorMongoRepository)
+  return new LogErrorControllerDecorator(addTaskController, logErrorMongoRepository)
 }

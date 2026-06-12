@@ -3,7 +3,7 @@ import type { AddATaskModel } from '../../../usecases/addTask'
 import type { AddTaskRepository } from '../../../usecases/repository/addTaskRepository'
 import { MongoManager } from '../../config/mongoManager'
 
-export class TaskMongoRepository implements AddTaskRepository {
+export class AddTaskMongoRepository implements AddTaskRepository {
   async add(taskData: AddATaskModel): Promise<Task> {
     const taskCollection = MongoManager.getInstance().getCollection('tasks')
     const { insertedId } = await taskCollection.insertOne(taskData)
