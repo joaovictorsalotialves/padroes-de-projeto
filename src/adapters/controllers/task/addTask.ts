@@ -1,7 +1,5 @@
 import type { AddTask } from '../../../usecases/addTask'
-import type { Controller } from '../../interfaces/controller'
-import type { HttpRequest, HttpResponse } from '../../interfaces/http'
-import type { Validation } from '../../interfaces/validation'
+import type { Controller, HttpRequest, HttpResponse, Validation } from '../../interfaces'
 import { badRequest, created, serverError } from '../../presentations/api/httpResponses/httpResponses'
 
 export class AddTaskController implements Controller {

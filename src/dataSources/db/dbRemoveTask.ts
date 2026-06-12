@@ -1,5 +1,4 @@
-import type { RemoveTask, RemoveTaskModel } from '../../usecases/removeTask'
-import type { RemoveTaskRepository } from '../../usecases/repository/removeTaskRepository'
+import type { RemoveTask, RemoveTaskModel, RemoveTaskRepository } from '../../usecases'
 
 export class DbRemoveTask implements RemoveTask {
   constructor(private readonly RemoveTaskRepository: RemoveTaskRepository) {}

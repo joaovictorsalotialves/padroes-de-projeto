@@ -1,6 +1,4 @@
-import { DbRemoveTask } from '../../dataSources/db/dbRemoveTask'
-import { LogErrorMongoRepository } from '../../dataSources/db/repository/logErrorMongoRepository'
-import { RemoveTaskMongoRepository } from '../../dataSources/db/repository/removeTaskMongoRepository'
+import { DbRemoveTask, LogErrorMongoRepository, RemoveTaskMongoRepository } from '../../dataSources'
 import { RemoveTaskController } from '../controllers/task/removeTask'
 import { LogErrorControllerDecorator } from '../decorator/logErrorControllerDecorator'
 import { RequiredFieldsValidation } from '../validations/requiredFieldsValidation'

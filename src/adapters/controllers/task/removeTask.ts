@@ -1,7 +1,5 @@
 import type { RemoveTask } from '../../../usecases/removeTask'
-import type { Controller } from '../../interfaces/controller'
-import type { HttpRequest, HttpResponse } from '../../interfaces/http'
-import type { Validation } from '../../interfaces/validation'
+import type { Controller, HttpRequest, HttpResponse, Validation } from '../../interfaces'
 import { badRequest, noContent, serverError } from '../../presentations/api/httpResponses/httpResponses'
 
 export class RemoveTaskController implements Controller {

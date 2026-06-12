@@ -1,7 +1,6 @@
 import type { Router } from 'express'
 import { expressRouteAdapter } from '../../../expressRouteAdapter'
-import { addTaskControllerFactory } from '../../../factories/addTaskControllerFactory'
-import { removeTaskControllerFactory } from '../../../factories/removeTaskControllerFactory'
+import { addTaskControllerFactory, removeTaskControllerFactory } from '../../../factories'
 
 export default (router: Router): void => {
   const addTaskController = addTaskControllerFactory()

@@ -1,6 +1,5 @@
 import type { Task } from '../../entities/task'
-import type { AddATaskModel, AddTask } from '../../usecases/addTask'
-import type { AddTaskRepository } from '../../usecases/repository/addTaskRepository'
+import type { AddATaskModel, AddTask, AddTaskRepository } from '../../usecases/'
 
 export class DbAddTask implements AddTask {
   constructor(private readonly addTaskRepository: AddTaskRepository) {}

@@ -1,8 +1,6 @@
 import { ObjectId } from 'mongodb'
-import { InvalidParamError } from '../../../adapters/presentations/api/errors/invalid-param-error'
-import { NotFoundError } from '../../../adapters/presentations/api/errors/not-found-error'
-import type { RemoveTaskModel } from '../../../usecases/removeTask'
-import type { RemoveTaskRepository } from '../../../usecases/repository/removeTaskRepository'
+import { InvalidParamError, NotFoundError } from '../../../adapters/presentations/api/errors/'
+import type { RemoveTaskModel, RemoveTaskRepository } from '../../../usecases'
 import { MongoManager } from '../../config/mongoManager'
 
 export class RemoveTaskMongoRepository implements RemoveTaskRepository {

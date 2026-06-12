@@ -1,6 +1,5 @@
 import type { Task } from '../../../entities/task'
-import type { AddATaskModel } from '../../../usecases/addTask'
-import type { AddTaskRepository } from '../../../usecases/repository/addTaskRepository'
+import type { AddATaskModel, AddTaskRepository } from '../../../usecases'
 import { MongoManager } from '../../config/mongoManager'
 
 export class AddTaskMongoRepository implements AddTaskRepository {
